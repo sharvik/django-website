@@ -1,0 +1,16 @@
+{% extends 'myapp/base.html' %}
+{% block body_block %}
+    {% if message %}
+        <h2>{{ message }}</h2>
+    {% elif orders %}
+        <h3>List of the Orders:</h3>
+        <ol>
+        {% for order in orders %}
+            <li> {{ order }} </li>
+        {% endfor %}
+        </ol>
+    {% else %}
+        <h3>No order placed yet.</h3>
+    {% endif %}
+
+{% endblock %}

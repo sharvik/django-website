@@ -1,0 +1,18 @@
+{% extends 'myapp/base.html' %}
+{% block login_block %}
+     <h2>Log In</h2>
+     <form class="btn col-6 mt-1" action="{% url 'myapp:user_login' %}" method="post">
+     {% csrf_token %}
+     {{ form.as_p }}
+     <label> Username:
+         <input type="text" name="username" />
+     </label>
+     <label> Password:
+        <input type="password" name="password" />
+     </label>
+         <input type="hidden" name="next" value="{{ request.GET.next }}" />
+
+     <input class="btn col-4 mt-0 btn-success" type="submit" name="Log In" value="Log In" />
+     </form>
+    <p class="col-2 mt-2">Or<a class="btn col-12 mt-2 btn-secondary" href="{% url 'myapp:register' %}">Register</a></p>
+{% endblock %}

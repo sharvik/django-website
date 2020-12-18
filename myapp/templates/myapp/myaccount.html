@@ -1,0 +1,26 @@
+{% extends 'myapp/base.html' %}
+{% block myhdg %} {{ first_name }} {% endblock %}
+{% block body_block %}
+    {% if message %}
+        <h2>{{ message }}</h2>
+    {% elif first_name %}
+        {% if image %} <img class="img-thumbnail" src="{{image}}" width="200px"
+    height="160px" style="vertical-align:middle" alt="Profile"/>{% endif %}
+        <h2>Name: {{ first_name }} {{ last_name }}</h2>
+        <h3>List of the Topics:</h3>
+        <ol>
+        {% for top in topics %}
+            <li> {{ top }} </li>
+        {% endfor %}
+        </ol>
+
+        <h3>List of the Courses:</h3>
+        <ol>
+        {% for cour in courses %}
+            <li> {{ cour }} </li>
+        {% endfor %}
+        </ol>
+    {% endif %}
+
+
+{% endblock %}

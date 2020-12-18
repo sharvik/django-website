@@ -1,0 +1,20 @@
+{% extends 'myapp/base.html' %}
+{% block body_block %}
+    {% if last_login %}
+        {{ last_login }}
+        {% if top_list %}
+            <h2>List of Topics</h2>
+            <ol>
+                {% for top in top_list %}
+                    <li> <a href="{% url 'myapp:detail' top.id %}">{{ top.name }}</a> </li>
+                {% endfor %}
+            </ol>
+            <p><a href="{% url 'myapp:place_order' %}">Place Order</a></p>
+        {% else %}
+            <strong>There are no available topics!</strong>
+        {% endif %}
+    {% else %}
+        <h2>Your last login was an hour ago.</h2>
+    {% endif %}
+
+{% endblock %}

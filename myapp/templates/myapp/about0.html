@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About Page</title>
+</head>
+<body>
+{% if about_us %}
+    <h2>{{ about_us }}</h2>
+{% endif %}
+<p><a href="/myapp">Index page - Hardcoded</a>
+<a href="{% url 'myapp:index' %}">Index page - URL Namespacing</a></p>
+</body>
+</html>

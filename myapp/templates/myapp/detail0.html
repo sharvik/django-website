@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ topic }}</title>
+</head>
+<body>
+{% if topic%}
+    <h2>
+    Name: {{ topic }} <br/>
+    Length: {{ topic.length }}
+    </h2>
+    {% if cour_list %}
+        <h3>List of the Courses:</h3>
+        <ol>
+        {% for cour in cour_list %}
+            <li> {{ cour }} </li>
+        {% endfor %}
+    </ol>
+    {% endif %}
+{% endif %}
+<p><a href="{% url 'myapp:index' %}">Go Back</a></p>
+</body>
+</html>

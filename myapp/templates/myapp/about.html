@@ -1,0 +1,13 @@
+{% extends 'myapp/base.html' %}
+{%  block title %}
+    APP About page
+{% endblock %}
+{% block body_block %}
+{% if about_us %}
+    <h2>{{ about_us }}</h2>
+{% endif %}
+{% if num_times %}
+    <h2>{{ num_times }}</h2>
+{% endif %}
+<a href="{% url 'myapp:index' %}">Back to the main page.</a></p>
+{% endblock %}
